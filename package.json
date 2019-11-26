@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "./node_modules/.bin/nodemon --inspect=0.0.0.0:9229 ./bin/www"
+    "startOld": "./node_modules/.bin/nodemon --inspect=0.0.0.0:9229 ./bin/www",
+    "start": "node app.js"
   },
   "prettier": {
     "printWidth": 120,
