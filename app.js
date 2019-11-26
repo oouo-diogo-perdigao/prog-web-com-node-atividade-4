@@ -6,7 +6,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const passport = require('passport');
-const http = require('http').createServer(app);
+//const http = require('http').createServer(app);
 
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
@@ -53,9 +53,9 @@ app.use(function(err, req, res, next) {
 });
 
 //Inicia o servidor escutando na porta 8080
-http.listen(80, function() {
-    console.log('Example app listening on port 8080!');
-});
+//http.listen(80, function() {
+//    console.log('Example app listening on port 8080!');
+//});
 
 module.exports = app;
 
