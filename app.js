@@ -1,15 +1,18 @@
 const createError = require('http-errors');
 const express = require('express');
+const app = express();
+
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const passport = require('passport');
+const http = require('http').createServer(app);
 
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const logoutRouter = require('./routes/logout');
 
-const app = express();
+
 require('./configs/github.strategy');
 
 // view engine setup
@@ -36,6 +39,8 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
+
+
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -47,4 +52,11 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+//Inicia o servidor escutando na porta 8080
+http.listen(80, function() {
+    console.log('Example app listening on port 8080!');
+});
+
 module.exports = app;
+
+
