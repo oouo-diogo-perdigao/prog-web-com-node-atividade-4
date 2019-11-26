@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "startOld": "./node_modules/.bin/nodemon --inspect=0.0.0.0:9229 ./bin/www",
-    "start": "node app.js"
+    "start": "node ./bin/www"
   },
   "prettier": {
     "printWidth": 120,
